@@ -1,1 +1,1 @@
-This repo contain folders fro  python ,shell script and c programming projects.
+This repo contain folders for python ,shell script and c programming projects.
