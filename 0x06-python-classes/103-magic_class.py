@@ -4,13 +4,17 @@ import math
 
 
 class MagicClass:
+    """ Magic """
     def __init__(self, radius=0):
-        if not isinstance(radius, (int, float)):
+        self.__radius = 0
+        if type(radius) != int and type(radius) != float:
             raise TypeError("radius must be a number")
         self.__radius = radius
 
+    """ AREA """
     def area(self):
-        return math.pi * self.__radius ** 2
+        return (self.__radius ** 2 * math.pi)
 
+    """ CIRCUMFERENCE """
     def circumference(self):
-        return 2 * math.pi * self.__radius
+        return (2 * math.pi * self.__radius)
