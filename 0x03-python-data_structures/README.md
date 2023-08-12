@@ -1,28 +1,49 @@
-This repository contains Python scripts and c file that i  have written as part of the ALX Higher Level Programming. The scripts are designed to demnstrate my skills in Python and c programming, including data structures, algorithms, and functions.
+# Python Data Structures Project
 
-Tasks:
+This project contains a collection of Python and C tasks related to data structures.
 
-The following tass are included this repository:
+## Table of Contents
 
-1. Print a list of integers
-2. secure access to an element in a list
-3. Replace element
-4. Print a list of integers... in reverse!
-5. Replace in a copy
-6. Can you C me now?
-7. Lists of lists = Matrix
-8. Tuples addition
-9. More returns!
-10. Find the max
-11. Only by 2
-12. Delete at
-13. Switch
-14. Linked list plindrome
+- [Task 0: Print a list of integers](#task-0-print-a-list-of-integers)
+- [Task 1: Secure access to an element in a list](#task-1-secure-access-to-an-element-in-a-list)
+- [Task 2: Replace element](#task-2-replace-element)
+- [Task 3: Print a list of integers... in reverse!](#task-3-print-a-list-of-integers-in-reverse)
+- [Task 4: Replace in a copy](#task-4-replace-in-a-copy)
+- [Task 5: Can you C me now?](#task-5-can-you-c-me-now)
+- [Task 6: Lists of lists = Matrix](#task-6-lists-of-lists--matrix)
+- [Task 7: Tuples addition](#task-7-tuples-addition)
+- [Task 8: More returns!](#task-8-more-returns)
+- [Task 9: Find the max](#task-9-find-the-max)
+- [Task 10: Only by 2](#task-10-only-by-2)
+- [Task 11: Delete at](#task-11-delete-at)
+- [Task 12: Switch](#task-12-switch)
+- [Task 13: Linked list palindrome](#task-13-linked-list-palindrome)
+- [Task 14: CPython #0: Python lists](#task-14-cpython-0-python-lists)
 
-Usage:
+## Task 0: Print a list of integers
 
-To use the scripts in this repository,you will need to have Python installed on your computer.Once you have Python installed,you can urun the script by typing the following command in your terminal:
+Write a Python function that prints all integers of a list. The function should use the `str.format()` method and not import any modules.
 
-python "script_name"
+## Task 1: Secure access to an element in a list
 
-Author : NEAZYIT
+Write a Python function that retrieves an element from a list. The function should handle negative and out-of-range indices without using try/except or imports.
+
+## Task 2: Replace element
+
+Write a Python function that replaces an element of a list at a specific position. The function should handle negative and out-of-range indices without using try/except or imports.
+
+... (similar summaries for each task)
+
+## Task 14: CPython #0: Python lists
+
+Create a C function that prints information about Python lists. This involves compiling a shared library and using Python scripts to test the function.
+
+## Usage
+
+To run and test each task, follow the instructions provided in the respective task files. Make sure to meet the requirements outlined in the project description.
+
+## Author
+
+NEAZYIT
+
+Feel free to explore each task's directory for detailed code and implementation.
