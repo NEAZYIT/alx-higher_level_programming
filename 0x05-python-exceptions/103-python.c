@@ -1,24 +1,17 @@
-#include "Python.h"
-#include <stdio.h>
-#include <float.h>
+#include <Python.h>
 
 void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
 void print_python_float(PyObject *p);
 
 /**
- * print_python_list - Prints information about Python list. Such as size, and
- * amount of memory allcoated. What type each element is and if it is a type
- * 'bytes' or 'float', print additional information on the element.
- *
- * @p: Pointer to a Python object.
- *
- * Return: void.
+ * print_python_list - Prints basic info about Python lists.
+ * @p: A PyObject list object.
  */
 void print_python_list(PyObject *p)
 {
 	Py_ssize_t size, alloc, i;
-	const chat *type;
+	const char *type;
 	PyListObject *list = (PyListObject *)p;
 	PyVarObject *var = (PyVarObject *)p;
 
@@ -52,7 +45,6 @@ void print_python_list(PyObject *p)
  * print_python_bytes - Prints basic info about Python byte objects.
  * @p: A PyObject byte object.
  */
-
 void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t size, i;
@@ -70,7 +62,10 @@ void print_python_bytes(PyObject *p)
 	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
 	printf("  trying string: %s\n", bytes->ob_sval);
 
-	size = ((PyVarObject *)p)->ob_size < 10 ? ((PyVarObject *)p)->ob_size : 10;
+	if (((PyVarObject *)p)->ob_size >= 10)
+		size = 10;
+	else
+		size = ((PyVarObject *)p)->ob_size + 1;
 
 	printf("  first %ld bytes: ", size);
 	for (i = 0; i < size; i++)
@@ -87,7 +82,6 @@ void print_python_bytes(PyObject *p)
  * print_python_float - Prints basic info about Python float objects.
  * @p: A PyObject float object.
  */
-
 void print_python_float(PyObject *p)
 {
 	char *buffer = NULL;
@@ -103,9 +97,8 @@ void print_python_float(PyObject *p)
 		return;
 	}
 
-	buffer = PyOS_double_to_string(
-			float_obj->ob_fval, 'r', 0, Py_DTSF_ADD_DOT_0, NULL
-	);
+	buffer = PyOS_double_to_string(float_obj->ob_fval, 'r', 0,
+			Py_DTSF_ADD_DOT_0, NULL);
 	printf("  value: %s\n", buffer);
 	PyMem_Free(buffer);
 }
