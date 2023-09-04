@@ -8,7 +8,8 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
-
+    
+    """ WIDTH """
     @property
     def width(self):
         return self.__width
@@ -20,7 +21,8 @@ class Rectangle:
         elif value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-
+    
+    """ HEIGHT """
     @property
     def height(self):
         return self.__height
@@ -32,17 +34,22 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
+    
+    """ Rectangle area """
     def area(self):
         """Return the area of the Rectangle."""
         return self.__width * self.__height
-
+    
+    """ Rectangle perimeter """
     def perimeter(self):
         """Return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
-
+    
+    """ Returns printable string representation
+    of an instance
+    """
     def __str__(self):
         """Return a string representation of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
