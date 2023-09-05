@@ -14,7 +14,8 @@ def matrix_divided(matrix, div):
         list of lists: A new matrix with elements rounded to 2 decimal places.
 
     Raises:
-        TypeError: If the matrix is not a list of lists of integers/floats, if rows have different sizes,
+        TypeError: If the matrix is not a list of lists of integers/floats,
+        if rows have different sizes,
                    or if div is not a number.
         ZeroDivisionError: If div is equal to 0.
 
