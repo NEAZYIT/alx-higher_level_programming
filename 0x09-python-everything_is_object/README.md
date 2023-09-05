@@ -23,7 +23,7 @@ This repository contains Python scripts and answers to questions related to obje
 
 ### 0. Who am I?
 - **Task:** What function would you use to get the type of an object?
-- **File:** [0-answer.txt](https://github.com/alx-higher_level_programming/0x09-python-everything_is_object/blob/main/0-answer.txt)
+- **File:** [0-answer.txt](https://github.com/NEAZYIT/alx-higher_level_programming/blob/master/0x09-python-everything_is_object/0-answer.txt)
 
 ### 1. Where are you?
 - **Task:** How do you get the variable identifier (which is the memory address in the CPython implementation)?
