@@ -2,6 +2,7 @@
 
 """Module for inherits_from function."""
 
+
 def inherits_from(obj, a_class):
     """
     Check if an object is an instance of a class that inherits from a_class.
