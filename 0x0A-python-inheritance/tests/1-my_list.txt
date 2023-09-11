@@ -1,0 +1,90 @@
+# 1-my_list.txt
+# NEAZYTEST
+
+Unit Test: `print_sorted` method of `MyList` class
+==================================================
+
+This unit test checks the functionality of the `print_sorted` method of the `MyList` class.
+
+First, import `MyList` from the `1-my_list` module::
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Initialize an empty `MyList` object and test `print_sorted` on an empty list::
+
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+
+Append multiple values to the list and check if `print_sorted` sorts them correctly::
+
+    >>> my_list.append(2)
+    >>> my_list.append(2)
+    >>> my_list.append(2)
+    >>> my_list.append(2)
+    >>> my_list.print_sorted()
+    [2, 2, 2, 2]
+
+    >>> my_list.append(1)
+    >>> my_list.print_sorted()
+    [1, 2, 2, 2, 2]
+
+    >>> my_list.append(10)
+    >>> my_list.print_sorted()
+    [1, 2, 2, 2, 2, 10]
+
+    >>> my_list.append(0)
+    >>> my_list.print_sorted()
+    [0, 1, 2, 2, 2, 2, 10]
+
+    >>> my_list.append(-11)
+    >>> my_list.print_sorted()
+    [-11, 0, 1, 2, 2, 2, 2, 10]
+
+    >>> print(my_list)
+    [2, 2, 2, 2, 1, 10, 0, -11]
+
+Attempting to use `print_sorted` on a regular list should raise an `AttributeError`::
+
+    >>> my_list = [1, 10, 2, 3]
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    AttributeError: 'list' object has no attribute 'print_sorted'
+
+Create another `MyList` object and append values to it for additional testing::
+
+    >>> my_list2 = MyList()
+    >>> my_list2.append(-2)
+    >>> my_list2.append(-5)
+    >>> my_list2.append(-3)
+    >>> my_list2.append(-20)
+    >>> my_list2.print_sorted()
+    [-20, -5, -3, -2]
+
+    >>> my_list2.append(2)
+    >>> my_list2.append(-50)
+    >>> my_list2.append(0)
+    >>> my_list2.append(0)
+    >>> my_list2.print_sorted()
+    [-50, -20, -5, -3, -2, 0, 0, 2]
+
+    >>> print(my_list2)
+    [-2, -5, -3, -20, 2, -50, 0, 0]
+
+Attempting to pass an argument to `print_sorted` should raise a `TypeError`::
+
+    >>> my_list2.print_sorted(my_list2)
+    Traceback (most recent call last):
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+Create another `MyList` object and append values to it for additional testing::
+
+    >>> other = MyList()
+    >>> other.append(1)
+    >>> other.append(2)
+    >>> other.append(3)
+    >>> other.append(4)
+    >>> other.append(5)
+    >>> other.append(6)
+    >>> other.print_sorted()
+    [1, 2, 3, 4, 5, 6]
