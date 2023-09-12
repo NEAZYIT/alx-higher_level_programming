@@ -4,13 +4,7 @@
 import json
 
 
-def load_from_json_file(filename):
+def load_from_json_file(new_filename):
     """ Function that creates an Object from a “JSON file” """
-    try:
-        with open(filename, 'r') as f:
-            data = f.read()
-            return (json.loads(data))
-    except FileNotFoundError:
-        return (None)
-    except json.JSONDecodeError:
-        return (None)
+    with open(new_filename, 'r') as new_file:
+        return (json.load(new_file))
