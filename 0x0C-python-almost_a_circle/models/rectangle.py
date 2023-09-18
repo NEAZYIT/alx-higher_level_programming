@@ -33,7 +33,7 @@ class Rectangle(Base):
                 f"{self.__width}/{self.__height}"
                 )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update attributes with provided arguments"""
         if args:
             arg_count = len(args)
@@ -47,6 +47,9 @@ class Rectangle(Base):
                 self.x = args[3]
             if arg_count >= 5:
                 self.y = args[4]
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     @property
     def width(self):
