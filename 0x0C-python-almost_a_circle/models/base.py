@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines a base model class."""
+import json
 
 
 class Base:
@@ -14,3 +15,10 @@ class Base:
         else:
             Base.__nb_objects += 1  # Increment the private attribute
             self.id = Base.__nb_objects  # Assign the new value to id
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Convert a list of dictionaries to a JSON string."""
+        if not list_dictionaries:
+            return "[]"
+        return json.dumps(list_dictionaries)
