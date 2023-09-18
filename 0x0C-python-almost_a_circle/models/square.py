@@ -24,3 +24,25 @@ class Square(Rectangle):
     def __str__(self):
         """Override the __str__ method"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    def update(self, *args, **kwargs):
+        """Update attributes with provided arguments or keyword arguments"""
+        if args:
+            arg_count = len(args)
+            if arg_count >= 1:
+                self.id = args[0]
+            if arg_count >= 2:
+                self.size = args[1]
+            if arg_count >= 3:
+                self.x = args[2]
+            if arg_count >= 4:
+                self.y = args[3]
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
