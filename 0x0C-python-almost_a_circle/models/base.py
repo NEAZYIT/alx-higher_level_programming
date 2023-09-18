@@ -2,6 +2,7 @@
 """Defines a base model class."""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -100,3 +101,37 @@ class Base:
             return instances
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        screen = turtle.Screen()
+        screen.bgcolor("white")
+
+        def draw_rectangle(rect):
+            drawer.penup()
+            drawer.goto(rect.x, rect.y)
+            drawer.pendown()
+            drawer.forward(rect.width)
+            drawer.left(90)
+            drawer.forward(rect.height)
+            drawer.left(90)
+            drawer.forward(rect.width)
+            drawer.left(90)
+            drawer.forward(rect.height)
+            drawer.left(90)
+
+        def draw_square(square):
+            drawer.penup()
+            drawer.goto(square.x, square.y)
+            drawer.pendown()
+            for _ in range(4):
+                drawer.forward(square.size)
+                drawer.left(90)
+
+        for rect in list_rectangles:
+            draw_rectangle(rect)
+
+        for square in list_squares:
+            draw_square(square)
+
+        screen.exitonclick()
