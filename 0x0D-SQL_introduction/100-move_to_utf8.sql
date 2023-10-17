@@ -1,10 +1,9 @@
--- Convert hbtn_0c_0 database to UTF8 (utf8mb4, collate utf8mb4_unicode_ci)
--- This script converts the specified database, table, and field to UTF8.
+-- Convert character set and collate to UTF8 (utf8mb4_unicode_ci)
+-- Convert the database: `hbtn_0c_0` to UTF8
+ALTER DATABASE `hbtn_0c_0` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- Set the database character set and collation to UTF8
-ALTER DATABASE 'hbtn_0c_0' CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- Select the database first
+-- Change database
 USE hbtn_0c_0;
--- Set the character set and collation for the first_table and its name field.
+
+-- Convert all and future columns in `first_table` to UTF8
 ALTER TABLE first_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
