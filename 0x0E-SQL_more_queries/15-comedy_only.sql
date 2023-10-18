@@ -1,8 +1,8 @@
--- Task: List comedy shows in the hbtn_0d_tvshows database.
--- Retrieve show titles categorized as "Comedy," sorted by show title in descending order.
-SELECT t.`title`
-FROM `tv_shows` AS t
-INNER JOIN `tv_show_genres` AS s ON t.`id` = s.`show_id`
-INNER JOIN `tv_genres` AS g ON g.`id` = s.`genre_id`
-WHERE g.`name` = "Comedy"
-ORDER BY t.`title` DESC;
+-- Task: List shows of a specific genre (Comedy).
+-- Retrieve titles of Comedy shows, ordered by show title.
+SELECT s.title
+FROM tv_genres g
+INNER JOIN tv_show_genres sg ON g.id = sg.genre_id
+INNER JOIN tv_shows s ON sg.show_id = s.id
+WHERE g.name = 'Comedy'
+ORDER BY s.title;
