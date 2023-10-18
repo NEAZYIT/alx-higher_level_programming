@@ -1,6 +1,10 @@
 -- TASK: List all shows in the 'hbtn_0d_tvshows' database with at least one linked genre.
 -- TASK: List all shows in the 'hbtn_0d_tvshows' database with at least one linked genre.
 
+-- Use the 'hbtn_0d_tvshows' database
+USE hbtn_0d_tvshows;
+
+
 -- List shows with at least one linked genre
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
