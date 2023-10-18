@@ -1,4 +1,5 @@
 -- TASK: List all cities of California from the 'hbtn_0d_usa' database
+-- List cities of CA
 
 -- Use the 'hbtn_0d_usa' database
 USE hbtn_0d_usa;
