@@ -98,4 +98,4 @@ service mysql start
 
 **Description:** List all shows and their linked genres from the database.
 
-**Author:** [NEAZYIT]
+**Author:** [NEAZYIT] (https://github.com/NEAZYIT)
