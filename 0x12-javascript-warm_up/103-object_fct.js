@@ -1,9 +1,15 @@
 #!/usr/bin/node
+
 const myObject = {
   type: 'object',
-  value: 12,
-  incr: function () { this.value += 1; }
+  value: 12
 };
+
+// Define the incr function
+myObject.incr = function () {
+  this.value++;
+};
+
 console.log(myObject);
 
 myObject.incr();
