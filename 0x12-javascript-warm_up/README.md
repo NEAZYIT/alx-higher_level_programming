@@ -1,4 +1,4 @@
-# JavaScript Warm-Up :javascript:
+# JavaScript Warm-Up
 
 This repository contains a set of JavaScript scripts to get started with the basics of JavaScript. The scripts are designed to be executed on Ubuntu 20.04 LTS using Node.js (version 14.x).
 
