@@ -1,44 +1,29 @@
 #!/usr/bin/python3
 """
-Lists states from hbtn_0e_0_usa where name matches the argument
+This script accepts an argument and displays all matching values in the states
+table of hbtn_0e_0_usa where the name matches the argument.
 """
-
 import MySQLdb
-import sys
+from sys import argv
 
+# The code should not be executed when imported
+if __name__ == '__main__':
 
-def filter_states():
-    # Extracting command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
+    # Establish a connection to the database
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
 
-    # Connecting to MySQL database
-    db = MySQLdb.connect(
-        host='localhost',
-        port=3306,
-        user=username,
-        passwd=password,
-        db=db_name
-    )
+    # Create a cursor object. It allows us to execute SQL commands through
+    # the same database connection.
+    cur = db.cursor()
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(argv[4])
+    cur.execute(query)
 
-    # Creating a cursor object
-    cursor = db.cursor()
-
-    # SQL query to select states by name and order by ID
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (state_name,))
-    data = cursor.fetchall()
-
-    # Displaying the fetched data
-    for row in data:
+    # Fetch all the rows and print them
+    rows = cur.fetchall()
+    for row in rows:
         print(row)
 
-    # Closing cursor and database connection
-    cursor.close()
+    # Close the cursor and the database connection
+    cur.close()
     db.close()
-
-
-if __name__ == "__main__":
-    filter_states()
