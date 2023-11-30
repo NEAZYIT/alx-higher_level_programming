@@ -1,5 +1,6 @@
 # 0x10. Python - Network #0 🌐
 
+# <span style="font-size:larger;">Python - Network</span>
 ![Python - Network](https://github.com/NEAZYIT/alx-higher_level_programming/assets/121446147/70102d8e-1ba8-49ed-8564-c7ffe77baade)
 
 ## Description 📄
