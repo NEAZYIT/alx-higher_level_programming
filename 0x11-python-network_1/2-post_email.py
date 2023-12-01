@@ -1,17 +1,21 @@
 #!/usr/bin/python3
-"""Send POST request with email parameter to given URL"""
+"""
+Send a POST request to a given URL with an email as a parameter
+"""
 
-import urllib.parse
 import urllib.request
+import urllib.parse
 import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
 
-    data = urllib.parse.urlencode({'email': email}).encode('utf-8')
-    req = urllib.request.Request(url, data=data, method='POST')
+    params = {'email': email}
+    data = urllib.parse.urlencode(params).encode('utf-8')
+    req = urllib.request.Request(url, data=data)
 
     with urllib.request.urlopen(req) as response:
-        print("Your email is:", email)
-        print(response.read().decode('utf-8'))
+        response_data = response.read().decode('utf-8')
+
+    print(response_data)
