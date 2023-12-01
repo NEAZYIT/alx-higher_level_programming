@@ -1,6 +1,6 @@
 # Python Network 1
 
-![NetPy Planet](https://github.com/NEAZYIT/alx-higher_level_programming/assets/121446147/d46d861e-e10d-40d7-9d47-4355bcc03019)
+![NetPy Planet](https://github.com/NEAZYIT/alx-higher_level_programming/assets/121446147/2bdb0000-2436-4733-b888-f51a9ca9506b)
 
 This repository contains a collection of Python scripts for network operations and HTTP requests.
 
