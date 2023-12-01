@@ -7,6 +7,7 @@ repository using the GitHub API. The commits are printed in the format:
 import requests
 from sys import argv
 
+
 def main():
     repo_name = argv[1]
     owner_name = argv[2]
@@ -27,6 +28,7 @@ def main():
         sha = commit['sha']
         author_name = commit['commit']['author']['name']
         print(f"{sha}: {author_name}")
+
 
 if __name__ == "__main__":
     main()
