@@ -21,5 +21,5 @@ def find_peak(list_of_integers):
         return list_of_integers[mid]
     elif (mid != length - 1 and
           list_of_integers[mid + 1] > list_of_integers[mid]):
-        return find_peak(list_of_integers[mid:])
+        return find_peak(list_of_integers[mid+1:])
     return find_peak(list_of_integers[:mid])
