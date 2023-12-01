@@ -1,17 +1,14 @@
 #!/usr/bin/python3
 """
-Send POST request with email parameter to a given URL using requests
+Send a POST request to a provided URL with an email parameter
 """
 
 import requests
 import sys
 
-if __name__ == "__main__":
-    url = sys.argv[1]
+if __name__ == '__main__':
     email = sys.argv[2]
-
     payload = {'email': email}
-    response = requests.post(url, data=payload)
 
-    print("Your email is:", email)
+    response = requests.post(sys.argv[1], data=payload)
     print(response.text)
